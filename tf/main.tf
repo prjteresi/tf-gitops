@@ -46,8 +46,8 @@ module "ec2-instance" {
   version = "1.0.1"
 
   for_each = {
-    for k,v in local.cloud_configs: k=>v 
-    if v["kind"] == "ec2-instance" ? true: false
+    for k, v in local.cloud_configs : k => v
+    if v["kind"] == "ec2-instance" ? true : false
   }
 
   vpc_id           = each.value["vpc_id"]
