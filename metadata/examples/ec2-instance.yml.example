@@ -1,0 +1,6 @@
+kind: "ec2-instance"
+vpc_id: "vpc-0a803e9e508e85ac9"
+vm_subnet_cidr: "172.31.1.0/24"
+vm_name: "e2-instance"
+tf_unique_id: "ec2-instance"
+vm_instance_type: "t2.micro"
