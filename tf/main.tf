@@ -22,6 +22,27 @@ locals {
 
 }
 
+variable "environ" {
+
+  type        = string
+  description = <<EOT
+  Environment you are building out.
+  Options:
+  - dev
+  - np
+  - prod
+  - uat
+  - qa
+  EOT
+
+  sensitive = false
+  validation {
+    condition     = can(regex("^dev$|^np$|^prod$|^uat$|^qa$", var.environment))
+    error_message = "Err: invalid environment."
+  }
+
+}
+
 /*
 module "local_vm" {
 
