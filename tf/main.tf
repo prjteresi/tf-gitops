@@ -37,7 +37,7 @@ variable "environ" {
 
   sensitive = false
   validation {
-    condition     = can(regex("^dev$|^np$|^prod$|^uat$|^qa$", var.environment))
+    condition     = can(regex("^dev$|^np$|^prod$|^uat$|^qa$", var.environ))
     error_message = "Err: invalid environment."
   }
 
